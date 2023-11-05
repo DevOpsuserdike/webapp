@@ -31,6 +31,13 @@ jobs:
       - name: display 1
         run: ls -la /home/runner/work/webapp/webapp/webapp/target/
 
+      - name: publish to artifactory
+        uses: advancedcsg-open/action-jfrog-cli@master
+        with:
+          url: 'https://jfrogsiddk.jfrog.io/'
+          credentials type: 'accesstoken'
+          apikey: ${{ secrets.RT_ACCESSTOKEN }}
+          args: u "/home/runner/work/webapp/webapp/webapp/target/*" "/test/" --recursive=true
 
     
 

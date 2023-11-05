@@ -1,18 +1,18 @@
 name: "First Program"
 on: push
 jobs: 
-  my_first_job:
-    name: display fist name
+  checkout:
+    name: checkout_repository
     runs-on: ubuntu-latest
     steps:
-      - name: first name
-        run: echo "My first name is Siddhesh"
-      - name: Last name
-        run: echo "My last name is Dike"
-  sec_job:
-    name: display last name
-    runs-on: ubuntu-latest
-    steps:
-      - name: experience
-        run : echo "devops"
+      - name: checkout_github
+        uses: actions/checkout@v4.1.1
+        with:
+          ref: main
+      - name: display message
+        run: echo "Completed the checkout"
+
+    
+
+
     

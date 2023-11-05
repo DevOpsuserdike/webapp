@@ -11,7 +11,7 @@ jobs:
         run: echo "My last name is Dike"
     needs: sec_job
   sec_job:
-    name: display last name
+    name: experience
     runs-on: ubuntu-latest
     steps:
       - name: experience

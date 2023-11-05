@@ -33,15 +33,11 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>3.10.1</source>
-          <target>3.10.1</target>
+          <source>1.6</source>
+          <target>1.6</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.3.2</version>
-      </plugin>
+
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <configuration>

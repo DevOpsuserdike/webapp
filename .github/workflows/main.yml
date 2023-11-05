@@ -27,26 +27,28 @@ jobs:
         run: echo "java installation is completed"
 
       - name: Build with Maven
-        run: mvn clean install
+        run: mvn --settings settings.xml clean deploy
       - name: display 1
         run: ls -la /home/runner/work/webapp/webapp/webapp/target/*.war
 
-      - name: rename the artifacts
-        run: mv /home/runner/work/webapp/webapp/webapp/target/webapp.war /home/runner/work/webapp/webapp/webapp/target/webapp_${{ github.run_number }}.war
+#      - name: rename the artifacts
+#        run: mv /home/runner/work/webapp/webapp/webapp/target/webapp.war /home/runner/work/webapp/webapp/webapp/target/webapp_${{ github.run_number }}.war
+#
+#      - name: publish to artifactory
+#        uses: jfrog/setup-jfrog-cli@v3
+#        env:
+#          JF_ACCESS_TOKEN: ${{ secrets.RT_ACCESSTOKEN }}
+#      
+#      - name: check version of jfrog  
+#        run: jf --version
+#
+#      - name: create a text file
+#        run: echo "Siddhesh" >> test.txt 
+#
+#      - name: copy to jfrog
+#        run: jf rt upload "/home/runner/work/webapp/webapp/webapp/target/*.war" artifactory/test-libs-snapshot-local/ --url="https://jfrogsiddk.jfrog.io/" --access-token="cmVmdGtuOjAxOjE3MzA2OTk1NDc6ZE1WbTBqRUtTRGZiR0RJeWd2MndUZTNZdGlr"
 
-      - name: publish to artifactory
-        uses: jfrog/setup-jfrog-cli@v3
-        env:
-          JF_ACCESS_TOKEN: ${{ secrets.RT_ACCESSTOKEN }}
       
-      - name: check version of jfrog  
-        run: jf --version
-
-      - name: create a text file
-        run: echo "Siddhesh" >> test.txt 
-
-      - name: copy to jfrog
-        run: jf rt upload "/home/runner/work/webapp/webapp/webapp/target/*.war" artifactory/test-libs-snapshot-local/ --url="https://jfrogsiddk.jfrog.io/" --access-token="cmVmdGtuOjAxOjE3MzA2OTk1NDc6ZE1WbTBqRUtTRGZiR0RJeWd2MndUZTNZdGlr"
 
     
 

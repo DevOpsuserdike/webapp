@@ -29,15 +29,13 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
       - name: display 1
-        run: ls -la /home/runner/work/webapp/webapp/webapp/target/
+        run: ls -la /home/runner/work/webapp/webapp/webapp/target/*.war
 
       - name: publish to artifactory
-        uses: advancedcsg-open/action-jfrog-cli@master
-        with:
-          url: 'https://jfrogsiddk.jfrog.io/'
-          credentials type: 'accesstoken'
-          apikey: ${{ secrets.RT_ACCESSTOKEN }}
-          args: u "webapp/target/*" "/test/" --recursive=true
+        uses: jfrog/setup-jfrog-cli@v3
+      
+      - name: check version of jfrog  
+        run: jf --version
 
     
 

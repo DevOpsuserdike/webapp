@@ -37,7 +37,7 @@ jobs:
           url: 'https://jfrogsiddk.jfrog.io/'
           credentials type: 'accesstoken'
           apikey: ${{ secrets.RT_ACCESSTOKEN }}
-          args: u "/home/runner/work/webapp/webapp/webapp/target/*" "/test/" --recursive=true
+          args: u "webapp/target/*" "/test/" --recursive=true
 
     
 

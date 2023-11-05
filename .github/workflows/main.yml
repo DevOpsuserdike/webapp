@@ -31,8 +31,8 @@ jobs:
       - name: display 1
         run: ls -la /home/runner/work/webapp/webapp/webapp/target/*.war
 
-#      - name: rename the artifacts
-#        run: mv /home/runner/work/webapp/webapp/webapp/target/webapp.war /home/runner/work/webapp/webapp/webapp/target/webapp_.war
+      - name: rename the artifacts
+        run: mv /home/runner/work/webapp/webapp/webapp/target/webapp.war /home/runner/work/webapp/webapp/webapp/target/webapp_${{ github.run_number }}.war
 
       - name: publish to artifactory
         uses: jfrog/setup-jfrog-cli@v3
@@ -46,7 +46,7 @@ jobs:
         run: echo "Siddhesh" >> test.txt 
 
       - name: copy to jfrog
-        run: jf rt upload "/home/runner/work/webapp/webapp/webapp/target/*" artifactory/test-libs-snapshot-local/ --url="https://jfrogsiddk.jfrog.io/" --access-token="cmVmdGtuOjAxOjE3MzA2OTk1NDc6ZE1WbTBqRUtTRGZiR0RJeWd2MndUZTNZdGlr"
+        run: jf rt upload "/home/runner/work/webapp/webapp/webapp/target/*.war" artifactory/test-libs-snapshot-local/ --url="https://jfrogsiddk.jfrog.io/" --access-token="cmVmdGtuOjAxOjE3MzA2OTk1NDc6ZE1WbTBqRUtTRGZiR0RJeWd2MndUZTNZdGlr"
 
     
 

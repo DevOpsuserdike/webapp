@@ -43,7 +43,7 @@ jobs:
         run: echo "Siddhesh" >> test.txt 
 
       - name: copy to jfrog
-        run: jf rt upload "test.txt" test-libs-snapshot/ --url="https://jfrogsiddk.jfrog.io/" --access-token=$JF_ACCESS_TOKEN --interactive=false
+        run: jf rt upload "test.txt" test-libs-snapshot/ --url="https://jfrogsiddk.jfrog.io/" --access-token=$JF_ACCESS_TOKEN
 
     
 

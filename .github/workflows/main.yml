@@ -26,10 +26,10 @@ jobs:
       - name: display
         run: echo "java installation is completed"
 
-      - name: Build with Maven
-        run: mvn --settings settings.xml clean deploy
-      - name: display 1
-        run: ls -la /home/runner/work/webapp/webapp/webapp/target/*.war
+#      - name: Build with Maven
+#        run: mvn --settings settings.xml clean deploy
+#      - name: display 1
+#        run: ls -la /home/runner/work/webapp/webapp/webapp/target/*.war
 
 #      - name: rename the artifacts
 #        run: mv /home/runner/work/webapp/webapp/webapp/target/webapp.war /home/runner/work/webapp/webapp/webapp/target/webapp_${{ github.run_number }}.war
@@ -47,8 +47,8 @@ jobs:
 #
 #      - name: copy to jfrog
 #        run: jf rt upload "/home/runner/work/webapp/webapp/webapp/target/*.war" artifactory/test-libs-snapshot-local/ --url="https://jfrogsiddk.jfrog.io/" --access-token="cmVmdGtuOjAxOjE3MzA2OTk1NDc6ZE1WbTBqRUtTRGZiR0RJeWd2MndUZTNZdGlr"
-
-      
+      - name: SonarCloud Scan
+        run: mvn clean verify sonar:sonar -Dsonar.projectKey=firstproject -Dsonar.projectName='firstproject' -Dsonar.host.url=http://35.89.251.238:9000 -Dsonar.token=sqp_40308f7008e7f32da5f284a5a7bf93c24dc35d50
 
     
 

@@ -1,5 +1,10 @@
 name: "First Program"
-on: push
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+      types: [opened, synchronize, reopened]
 jobs: 
   checkout:
     name: checkout_repository
@@ -57,6 +62,15 @@ jobs:
           args: 
             -Dsonar.projectKey=firstproject
             -Dsonar.projectName='firstproject'
+        env:
+          SONAR_TOKEN: sqp_40308f7008e7f32da5f284a5a7bf93c24dc35d50
+          SONAR_HOST_URL: http://35.89.251.238:9000
+      
+      - name: SonarQube Quality Gate check
+        id: sonarqube-quality-gate-check
+        uses: sonarsource/sonarqube-quality-gate-action@master
+      # Force to fail step after specific time.
+        timeout-minutes: 5
         env:
           SONAR_TOKEN: sqp_40308f7008e7f32da5f284a5a7bf93c24dc35d50
           SONAR_HOST_URL: http://35.89.251.238:9000

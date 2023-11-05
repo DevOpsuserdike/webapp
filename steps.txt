@@ -1,19 +1,16 @@
-Flow
-1. checkout gitlab 
-	a. check access token and create a new access token(gitlab-->preference--->access token) glpat-__-1REMvoru2x7rrE4hU
-	b. PATH=$PATH:/usr/local/src/apache-maven/bin/
-2. build using mvn clean install
-	a. all dependencies in pom.xml
-	b. artifacts will be in server
-3. mvn clean build (Jfrog)
-	a. https://jfrogsiddk.jfrog.io/
-	b. create setting.xml
-	c. update pom.xml file with scanshot local repository
-4. sonarqube scanner
-	a. Create project manually: 
-	sqp_aeb3075d64a58806713d719a02e22faed16979d4
-	b. download sonarqube plugin
-	c. add sonar qube server details.
-	d. trigger the job
-	e. 
-5. teams interconnect
+echo "# webapp" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/DevOpsuserdike/webapp.git
+git push -u origin main
+
+-----------------------------------------------------------------------------------------------------------------
+checkout
+
+
+
+build
+
+

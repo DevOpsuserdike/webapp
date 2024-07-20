@@ -1,0 +1,34 @@
+name: "First Program"
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+      types: [opened, synchronize, reopened]
+jobs: 
+  checkout:
+    name: checkout_repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout_github
+        uses: actions/checkout@v4.1.1
+        with:
+          ref: main
+#      - name: display message1
+#        run: ls -la /home/runner/work/webapp/
+      - name: display message2
+        run: pwd
+      - name: display message3
+        run: ls -la
+      
+      - name: java installation
+        uses: actions/setup-java@v3.13.0
+        with: 
+          java-version: 21
+          distribution: temurin
+          java-package: jdk
+          architecture: x64 
+
+      - name: display
+        run: echo "java installation is completed"

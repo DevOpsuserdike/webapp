@@ -34,7 +34,7 @@ jobs:
         run: echo "java installation is completed"
       
       - name: Build with Maven
-        run: mvn --settings settings.xml clean deploy
+        run: mvn clean install
       
       - name: display 1
         run: ls -la /home/runner/work/webapp/webapp/webapp/target/*.war

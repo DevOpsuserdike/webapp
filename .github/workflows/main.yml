@@ -22,20 +22,22 @@ jobs:
       - name: display message3
         run: ls -la
       
-#      - name: java installation
-#        uses: actions/setup-java@v3.13.0
-#        with: 
-#          java-version: 21
-#          distribution: temurin
-#          java-package: jdk
-#          architecture: x64 
-#      - name: display
-#        run: echo "java installation is completed"
+      - name: java installation
+        uses: actions/setup-java@v3.13.0
+        with: 
+          java-version: 21
+          distribution: temurin
+          java-package: jdk
+          architecture: x64 
 
-#      - name: Build with Maven
-#        run: mvn --settings settings.xml clean deploy
-#      - name: display 1
-#        run: ls -la /home/runner/work/webapp/webapp/webapp/target/*.war
+      - name: display
+        run: echo "java installation is completed"
+      
+      - name: Build with Maven
+        run: mvn --settings settings.xml clean deploy
+      
+      - name: display 1
+        run: ls -la /home/runner/work/webapp/webapp/webapp/target/*.war
 
 #      - name: rename the artifacts
 #        run: mv /home/runner/work/webapp/webapp/webapp/target/webapp.war /home/runner/work/webapp/webapp/webapp/target/webapp_${{ github.run_number }}.war
@@ -57,47 +59,48 @@ jobs:
 #        run: mvn clean verify sonar:sonar -Dsonar.projectKey=firstproject -Dsonar.projectName='firstproject' -Dsonar.host.url=http://35.89.251.238:9000 -Dsonar.token=sqp_40308f7008e7f32da5f284a5a7bf93c24dc35d50
 
 
-      - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@master
-        with:
-          args: 
-            -Dsonar.projectKey=firstproject
-            -Dsonar.projectName='firstproject'
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: http://35.89.251.238:9000
-      
-      - name: SonarQube Quality Gate check
-        id: sonarqube-quality-gate-check
-        uses: sonarsource/sonarqube-quality-gate-action@master
-      # Force to fail step after specific time.
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: http://35.89.251.238:9000
-
-      - name: "Example show SonarQube Quality Gate Status value"
-        if: always()
-        run: echo "The Quality Gate status is ${{ steps.sonarqube-quality-gate-check.outputs.quality-gate-status }}"
-
-      - name: Post to a Slack channel
-        id: slack
-        uses: slackapi/slack-github-action@v1.24.0
-        with:
-    # For posting a rich message using Block Kit
-          payload: |
-            {
-              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-              "blocks": [
-                  {
-                      "type": "section",
-                      "text": {
-                          "type": "mrkdwn",
-                          "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                        }
-                  }
-                ]
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+#       - name: SonarQube Scan
+#         uses: sonarsource/sonarqube-scan-action@master
+#         with:
+#           args: 
+#             -Dsonar.projectKey=firstproject
+#             -Dsonar.projectName='firstproject'
+#         env:
+#           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#           SONAR_HOST_URL: http://35.89.251.238:9000
+#       
+#       - name: SonarQube Quality Gate check
+#         id: sonarqube-quality-gate-check
+#         uses: sonarsource/sonarqube-quality-gate-action@master
+#       # Force to fail step after specific time.
+#         timeout-minutes: 5
+#         env:
+#           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#           SONAR_HOST_URL: http://35.89.251.238:9000
+# 
+#       - name: "Example show SonarQube Quality Gate Status value"
+#         if: always()
+#         run: echo "The Quality Gate status is ${{ steps.sonarqube-quality-gate-check.outputs.quality-gate-status }}"
+# 
+#       - name: Post to a Slack channel
+#         id: slack
+#         uses: slackapi/slack-github-action@v1.24.0
+#         with:
+#     # For posting a rich message using Block Kit
+#           payload: |
+#             {
+#               "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+#               "blocks": [
+#                   {
+#                       "type": "section",
+#                       "text": {
+#                           "type": "mrkdwn",
+#                           "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+#                         }
+#                   }
+#                 ]
+#             }
+#         env:
+#           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+# 

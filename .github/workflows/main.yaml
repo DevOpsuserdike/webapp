@@ -6,4 +6,5 @@ jobs:
     name: display hello work
     runs-on: ubuntu-latest
       steps:
-        echo "Hello from github actions"
+        name: first job
+        run:  echo "Hello from github actions"

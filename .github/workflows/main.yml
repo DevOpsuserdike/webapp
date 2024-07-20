@@ -22,15 +22,15 @@ jobs:
       - name: display message3
         run: ls -la
       
-      - name: java installation
-        uses: actions/setup-java@v3.13.0
-        with: 
-          java-version: 21
-          distribution: temurin
-          java-package: jdk
-          architecture: x64 
-      - name: display
-        run: echo "java installation is completed"
+#      - name: java installation
+#        uses: actions/setup-java@v3.13.0
+#        with: 
+#          java-version: 21
+#          distribution: temurin
+#          java-package: jdk
+#          architecture: x64 
+#      - name: display
+#        run: echo "java installation is completed"
 
 #      - name: Build with Maven
 #        run: mvn --settings settings.xml clean deploy

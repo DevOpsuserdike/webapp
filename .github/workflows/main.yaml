@@ -1,0 +1,9 @@
+name: "First Program"
+on: 
+  workflow_dispatch:
+jobs:
+  display:
+    name: display hello work
+    runs-on: ubuntu-latest
+      steps:
+        echo "Hello from github actions"

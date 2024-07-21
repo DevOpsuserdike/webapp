@@ -47,6 +47,7 @@ jobs:
         with:
           #projectBaseDir: app/src
           args: >
+            -Dsonar.organization=organizationsid
             -Dsonar.projectKey=organizationsid_firstproject
 
 

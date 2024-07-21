@@ -42,7 +42,7 @@ jobs:
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v2.1.0 # Ex: v2.1.0, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
         env:
-          SONAR_TOKEN: "b1e95ba56943afd30c66e18e4cf289f7b4afd9ad"
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN1 }}
           SONAR_HOST_URL: "https://sonarcloud.io"
         with:
           #projectBaseDir: app/src
@@ -56,7 +56,7 @@ jobs:
       # Force to fail step after specific time.
         timeout-minutes: 5
         env:
-          SONAR_TOKEN: "b1e95ba56943afd30c66e18e4cf289f7b4afd9ad"
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN1 }}
           SONAR_HOST_URL: "https://sonarcloud.io"
       
       - name: "Example show SonarQube Quality Gate Status value"

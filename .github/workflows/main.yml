@@ -75,6 +75,9 @@ jobs:
       - name: create a text file
         run: echo "Siddhesh" >> test.txt 
 
+      - name: copy to jfrog
+        run: jf rt upload "/home/runner/work/webapp/webapp/webapp/target/*.war" artifactory/test-libs-snapshot-local/ --url="https://jfrogsiddk.jfrog.io/" --access-token=${{ secrets.JFROG_SECRET }}
+
   Buildjob:
     runs-on: ubuntu-latest
     steps:

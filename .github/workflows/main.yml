@@ -78,6 +78,19 @@ jobs:
       - name: copy to jfrog
         run: jf rt upload "/home/runner/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/*.war" artifactory/first-libs-snapshot-local/ --url="https://sidike1.jfrog.io" --access-token=${{ secrets.JFROG_SECRET }}
 
+      - name: slack notification
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+    # Slack channel id, channel name, or user id to post message.
+    # See also: https://api.slack.com/methods/chat.postMessage#channels
+    # You can pass in multiple channels to post to by providing a comma-delimited list of channel IDs.
+          channel-id: "notification-channel"
+    # For posting a simple plain text message
+          slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  
+
+
   Buildjob:
     runs-on: ubuntu-latest
     steps:

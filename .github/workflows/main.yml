@@ -13,5 +13,26 @@ jobs:
               echo "Second pipeline is with variable"
               whoami
               pwd
-              
+  
+  Buildjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: buildtheproject
+        run: echo "build stage"
+
+  scanningjob:
+    runs-on: ubuntu-latest
+    steps:  
+      - name: scanningjob
+        run: echo "Scanning stage"
+
+  nexusrepo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Artifacts upload stage"
+        run: echo "Artifacts upload on nexus repository"
+  
+
+
+
   

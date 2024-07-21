@@ -6,3 +6,12 @@ jobs:
     steps:
       - name: display message
         run: echo "starting of CI"
+
+      - name: run multiple commands
+        run: | 
+              echo "First pipeline is without variable"
+              echo "Second pipeline is with variable"
+              whoami
+              pwd
+              
+  

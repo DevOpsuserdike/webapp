@@ -32,7 +32,15 @@ jobs:
         run: |
               java --version
               mvn --version
+
+      - name: "build maven project"
+        run: mvn clean install  
   
+      - name: "check the artifacts"
+        run: ls -la 
+
+
+
   Buildjob:
     runs-on: ubuntu-latest
     steps:

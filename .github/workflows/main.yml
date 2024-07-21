@@ -30,8 +30,8 @@ jobs:
 
       - name: checklist
         run: |
-              java -vesion
-              mvn -vesion
+              java --version
+              mvn --version
   
   Buildjob:
     runs-on: ubuntu-latest

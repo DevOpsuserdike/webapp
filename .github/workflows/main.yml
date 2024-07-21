@@ -37,7 +37,17 @@ jobs:
         run: mvn clean install  
   
       - name: "check the artifacts"
-        run: ls -la 
+        run: ls -la /home/runner/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/
+
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@v2.1.0 # Ex: v2.1.0, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
+        env:
+          SONAR_TOKEN: "b1e95ba56943afd30c66e18e4cf289f7b4afd9ad"
+          SONAR_HOST_URL: "https://sonarcloud.io"
+        with:
+          #projectBaseDir: app/src
+          args: >
+            -Dsonar.projectKey=organizationsid_firstproject
 
 
 

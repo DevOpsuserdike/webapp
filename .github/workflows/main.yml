@@ -13,6 +13,23 @@ jobs:
               echo "Second pipeline is with variable"
               whoami
               pwd
+
+  checkout_stage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "checkout stage"
+        uses: actions/checkout@v4.1.7
+        with:
+          repository: 'webapp'
+      - name: "install java Version" 
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+
+      - name: checklist
+        run: |
+              java --vesion
+              mvn --vesion
   
   Buildjob:
     runs-on: ubuntu-latest

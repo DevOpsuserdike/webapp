@@ -1,4 +1,4 @@
-name: "First Program"
+name: "CI Pipeline for app service"
 on: 
   workflow_dispatch:
 jobs: 

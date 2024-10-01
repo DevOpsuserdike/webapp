@@ -1,0 +1,8 @@
+install docker
+create image
+run container
+stopna dn pause container
+log check from container
+import and export
+save and load 
+pull and push to docker hub

@@ -1,0 +1,30 @@
+Create a cluster and connect with kubectl
+aws eks update-kubeconfig --region us-west-2 --name ekscluster
+
+-----------------------------------------------------------------------------------------------------
+1. Create a pod
+2. create a replicaset
+3. create a deployment
+4. Create a service
+    a. load balancer
+    b. modeport
+    c. clusterIP
+Check the application running
+------------------------------------------------------------------------------------------------
+5. create a configmap
+6. Create a secret
+7. use env variable
+8. create a multi ocntainer
+9. create an initcontainer
+10. create a cronjob
+11. Create a ingress controller
+12. create a ingress rules
+13. create a network policies
+14. create a namespace and assign pod, services and deployment into it.
+15. create a volume, Volume claim and attach to pod
+---------------------------------------------------------------------------------------------------
+16. create a kubeconfig file
+17. Create a RBAC(Role and Role binding)
+18. Create a RBAC(cluster Role and cluster role binding)
+19. Create a service account and token for service account
+20. liveness and readiness probe

@@ -1,7 +1,8 @@
 FROM maven AS build
 WORKDIR /tmp
-RUN pwd
 COPY pom.xml /tmp/pom.xml
 COPY webapp /tmp/webapp
-RUN ls /tmp
 RUN mvn install
+
+FROM tomcat AS webserver
+COPY --from=build /tmp/webapp/target/webapp.war /usr/local/tomcat/webapps/myapp.war

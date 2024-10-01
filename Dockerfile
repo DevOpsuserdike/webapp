@@ -4,7 +4,7 @@
 #COPY webapp /tmp/webapp
 #RUN mvn install
 
-FROM tomcat:8.0-alpine AS webserver
+FROM tomcat:8.0-jre8 AS webserver
 #COPY --from=build /tmp/webapp/target/webapp.war /usr/local/tomcat/webapps/webapp.war
 EXPOSE 8080
-CMD [“catalina.sh”, “run”]
+CMD ["catalina.sh", "run"]

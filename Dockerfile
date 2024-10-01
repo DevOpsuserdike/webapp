@@ -6,3 +6,4 @@ RUN mvn install
 
 FROM tomcat AS webserver
 COPY --from=build /tmp/webapp/target/webapp.war /usr/local/tomcat/webapps/myapp.war
+CMD ["catalina.sh" "run"]

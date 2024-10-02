@@ -3,12 +3,19 @@ aws eks update-kubeconfig --region us-west-2 --name ekscluster
 
 -----------------------------------------------------------------------------------------------------
 1. Create a pod
-2. create a replicaset
+            Kubectl create -f pod.yml
+            kubectl get pods
+            kubectl delete pods myapp
+2. create a replicaset and replication controller(rs and rc)
+            kubectl get rc
+            kubectl get rs
+            kubectl delete rc myapp
+            kubectl delete rs myapp
 3. create a deployment
 4. Create a service
-    a. load balancer
-    b. modeport
-    c. clusterIP
+    a. load balancer: a542694a57d6b468f95e7f4e228570dc-1362813864.us-west-2.elb.amazonaws.com/webapp
+    b. nodeport : http://35.95.51.255:30001/webapp/
+    c. clusterIP: 
 Check the application running
 ------------------------------------------------------------------------------------------------
 5. create a configmap

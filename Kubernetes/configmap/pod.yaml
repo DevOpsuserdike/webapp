@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: myapp
+    image: ubuntu
+    command: ["sleep", "3600"]
+    volumeMounts:
+    - name: foo
+      mountPath: "/tmp"
+      readOnly: true
+
+  volumes:
+  - name: foo
+    configMap:
+      name: valuestore
+#      items:
+#      - key: "petnames"
+#        path: "petnames"
+
+
+#    env: 
+#    - name: myname
+#      valueFrom:
+#        configMapKeyRef:
+#          name: valuestore
+#          key: MYName
+#    - name: Mobile_Numer
+#      valueFrom:
+#        configMapKeyRef:
+#          name: valuestore
+#          key: Mobile_Numer
+#    - name: petnames
+#      valueFrom:
+#        configMapKeyRef:
+#          name: valuestore
+#          key: petnames.dog
+#    command: ["echo"]
+#    args: ["$(myname) $(Mobile_Numer) $(petnames)"]
+
+# Configmaps as environment variables
+# Configmaps as file

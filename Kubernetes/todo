@@ -19,16 +19,29 @@ aws eks update-kubeconfig --region us-west-2 --name ekscluster
 Check the application running
 ------------------------------------------------------------------------------------------------
 5. create a configmap
+        configmap as environment variable
+        configmap as file
+             kubectl delete configmaps valuestore
 6. Create a secret
+        secret from env file 
 7. use env variable
+            name and value
+            kubectl exec <podname> -- printenv
 8. create a multi ocntainer
+        multple container configuration in single pod
 9. create an initcontainer
-10. create a cronjob
-11. Create a ingress controller
-12. create a ingress rules
+        init container run first if it is success then all other container will run
+10. Daemonset
+        same conatiner running on all nodes
+11. create a cronjob
+        create a job which run every 3min
+12. Create a namespace and assign pod, services and deployment into it.
+        in metadata, we have to provide namespace details.
+
 13. create a network policies
-14. create a namespace and assign pod, services and deployment into it.
-15. create a volume, Volume claim and attach to pod
+14. create a ingress rules
+15. create a ingress controller
+16. create a volume, Volume claim and attach to pod
 ---------------------------------------------------------------------------------------------------
 16. create a kubeconfig file
 17. Create a RBAC(Role and Role binding)

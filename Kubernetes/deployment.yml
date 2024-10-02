@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: siddheshdike/webapp1:1.0.0
+        image: siddheshdike/webapp1:arg
         resources:
           limits:
             memory: "128Mi"
@@ -21,5 +21,6 @@ spec:
         ports:
         - containerPort: 8080
         env: 
-        - Name = "Webapp"
+        - name: Name
+          value: Webapp
   replicas: 1

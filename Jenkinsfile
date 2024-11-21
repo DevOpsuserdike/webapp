@@ -51,5 +51,16 @@ pipeline {
                 echo "RUN: ${params.Run}"
             }
         }
+        stage("build with maven") {
+            echo "maven build started"
+        }
+
+        stage("scanning stage") {
+            echo "Scanning stage started"
+        }
+
+        stage("jfrog stage") {
+            echo "jfrog stage started"
+        }
     }
 }

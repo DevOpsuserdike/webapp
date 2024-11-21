@@ -57,6 +57,7 @@ pipeline {
                     echo "maven build started"
                     sh 'pwd'
                     sh 'mvn --version'
+                    sh 'mvn install'
                 }
             }
             

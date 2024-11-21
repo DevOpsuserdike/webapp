@@ -9,11 +9,18 @@ pipeline {
         stage("setup parameters"){
             steps {
                 script {
-                        properties([parameters([booleanParam(description: 'Want to run?', name: 'Run'), choice(choices: ['Mango', 'Banana'], description: 'select the fruit', name: 'Fruit'), string(description: 'enter your name', name: 'Name'), pipelineTriggers([])])
-                }
-                
-            }
-            
+                        properties([
+                            parameters([
+                                        booleanParam(description: 'Want to run?', name: 'Run'
+                                        ), 
+                                        choice(choices: ['Mango', 'Banana'], description: 'select the fruit', name: 'Fruit'
+                                        ), 
+                                        string(description: 'enter your name', name: 'Name'
+                                        )
+                                    ])
+                        ])
+                }   
+            }  
         }
         stage('checkout') {
             steps {

@@ -52,17 +52,27 @@ pipeline {
             }
         }
         stage("build with maven") {
-            echo "maven build started"
-            sh 'pwd'
-            sh 'mvn --version'
+            steps {
+                script {
+                    echo "maven build started"
+                    sh 'pwd'
+                    sh 'mvn --version'
+                }
+            }
+            
         }
 
         stage("scanning stage") {
-            echo "Scanning stage started"
+            steps {
+                     echo "Scanning stage started"
+            }
+           
         }
 
         stage("jfrog stage") {
-            echo "jfrog stage started"
+            steps{
+                echo "jfrog stage started"
+            }
         }
     }
 }

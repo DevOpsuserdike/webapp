@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage("setup parameters"){
             steps {
-                properties([parameters([booleanParam(description: 'Want to run?', name: 'Run'), choice(choices: ['Mango', 'Banana'], description: 'select the fruit', name: 'Fruit'), string(description: 'enter your name', name: 'Name'), string(description: 'enter mobile number', name: 'Number')]), pipelineTriggers([])])
+                properties([parameters([booleanParam(description: 'Want to run?', name: 'Run'), choice(choices: ['Mango', 'Banana'], description: 'select the fruit', name: 'Fruit'), string(description: 'enter your name', name: 'Name'), pipelineTriggers([])])
             }
             
         }

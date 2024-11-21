@@ -8,7 +8,10 @@ pipeline {
     stages {
         stage("setup parameters"){
             steps {
-                properties([parameters([booleanParam(description: 'Want to run?', name: 'Run'), choice(choices: ['Mango', 'Banana'], description: 'select the fruit', name: 'Fruit'), string(description: 'enter your name', name: 'Name'), pipelineTriggers([])])
+                script {
+                        properties([parameters([booleanParam(description: 'Want to run?', name: 'Run'), choice(choices: ['Mango', 'Banana'], description: 'select the fruit', name: 'Fruit'), string(description: 'enter your name', name: 'Name'), pipelineTriggers([])])
+                }
+                
             }
             
         }
@@ -37,7 +40,6 @@ pipeline {
             steps {
                 echo "pipeline parameters value"
                 echo "Name : ${params.Name}"
-                echo "Number: ${params.Number}"
                 echo "Fruit: ${params.fruit}"
                 echo "RUN: ${params.Run}"
             }

@@ -53,6 +53,8 @@ pipeline {
         }
         stage("build with maven") {
             echo "maven build started"
+            sh 'pwd'
+            sh 'mvn --version'
         }
 
         stage("scanning stage") {

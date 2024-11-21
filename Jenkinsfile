@@ -7,7 +7,10 @@ pipeline {
 
     stages {
         stage("setup parameters"){
-            properties([parameters([booleanParam(description: 'Want to run?', name: 'Run'), choice(choices: ['Mango', 'Banana'], description: 'select the fruit', name: 'Fruit'), string(description: 'enter your name', name: 'name'), string(description: 'enter mobile number', name: 'number')]), pipelineTriggers([])])
+            steps {
+                properties([parameters([booleanParam(description: 'Want to run?', name: 'Run'), choice(choices: ['Mango', 'Banana'], description: 'select the fruit', name: 'Fruit'), string(description: 'enter your name', name: 'name'), string(description: 'enter mobile number', name: 'number')]), pipelineTriggers([])])
+            }
+            
         }
         stage('checkout') {
             steps {

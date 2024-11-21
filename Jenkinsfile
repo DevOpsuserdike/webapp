@@ -4,7 +4,11 @@ pipeline {
         name = "Siddhesh"
         number = "9322931282"
     }
+
     stages {
+        stage("setup parameters"){
+            properties([parameters([booleanParam(description: 'Want to run?', name: 'Run'), choice(choices: ['Mango', 'Banana'], description: 'select the fruit', name: 'Fruit'), string(description: 'enter your name', name: 'name'), string(description: 'enter mobile number', name: 'number')]), pipelineTriggers([])])
+        }
         stage('checkout') {
             steps {
                 echo 'checkout stage'
@@ -24,6 +28,15 @@ pipeline {
                 echo "pipeline environemnet"
                 echo "Name : ${name}"
                 echo "Number: ${number}"
+            }
+        }
+        stage('[parameters value in pipeline') {
+            steps {
+                echo "pipeline parameters value"
+                echo "Name : ${params.name}"
+                echo "Number: ${params.number}"
+                echo "Fruit: ${params.fruit}"
+                echo "RUN: ${params.run}"
             }
         }
     }

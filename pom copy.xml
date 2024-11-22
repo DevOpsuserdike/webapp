@@ -19,8 +19,8 @@
   <distributionManagement>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>maven-releases</name>
-        <url>http://localhost:8081/repository/maven-releases</url>
+        <name>a0lftxxa1wtyb-artifactory-primary-0-snapshots</name>
+        <url>https://trialkh74so.jfrog.io/artifactory/maven-libs-snapshot</url>
     </snapshotRepository>
   </distributionManagement>
 

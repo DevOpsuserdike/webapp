@@ -3,13 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <servers>
     <server>
-      <username>admin</username>
-      <password>admin</password>
+      <username>devopssiddhesh5@gmail.com</username>
+      <password>cmVmdGtuOjAxOjE3NjM3OTMzNDI6MURjNHN4NXRLSHlPeXpYbFBkRmI3cEFuV1hX</password>
       <id>central</id>
     </server>
     <server>
-      <username>admin</username>
-      <password>admin</password>
+      <username>devopssiddhesh5@gmail.com</username>
+      <password>cmVmdGtuOjAxOjE3NjM3OTMzNDI6MURjNHN4NXRLSHlPeXpYbFBkRmI3cEFuV1hX</password>
       <id>snapshots</id>
     </server>
   </servers>
@@ -21,14 +21,14 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>maven-snapshots</name>
-          <url>http://localhost:8081/repository/maven-snapshots/</url>
+          <name>maven-libs-snapshot</name>
+          <url>https://trialkh74so.jfrog.io/artifactory/maven-libs-snapshot</url>
         </repository>
         <repository>
           <snapshots />
           <id>snapshots</id>
-          <name>maven-snapshots</name>
-          <url>http://localhost:8081/repository/maven-snapshots/</url>
+          <name>maven-libs-snapshot</name>
+          <url>https://trialkh74so.jfrog.io/artifactory/maven-libs-snapshot</url>
         </repository>
       </repositories>
       <pluginRepositories>
@@ -37,14 +37,14 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>maven-snapshots</name>
-          <url>http://localhost:8081/repository/maven-snapshots/</url>
+          <name>maven-libs-snapshot</name>
+          <url>https://trialkh74so.jfrog.io/artifactory/maven-libs-snapshot</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
-          <name>maven-snapshots</name>
-          <url>http://localhost:8081/repository/maven-snapshots/</url>
+          <name>maven-libs-snapshot</name>
+          <url>https://trialkh74so.jfrog.io/artifactory/maven-libs-snapshot</url>
         </pluginRepository>
       </pluginRepositories>
       <id>artifactory</id>

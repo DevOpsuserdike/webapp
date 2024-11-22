@@ -62,7 +62,7 @@ pipeline {
             }
             
         }*/
-        stage("build with maven") {
+        stage("build maven with jfrog and nexus") {
             steps {
                 script {
                     echo "maven build started"

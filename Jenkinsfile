@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        stage("setup parameters"){
+       /* stage("setup parameters"){
             steps {
                 script {
                         properties([
@@ -21,7 +21,7 @@ pipeline {
                         ])
                 }   
             }  
-        }
+        }*/
         stage('checkout') {
             steps {
                 echo 'checkout stage'
@@ -43,7 +43,7 @@ pipeline {
                 echo "Number: ${number}"
             }
         }
-        stage('[parameters value in pipeline') {
+        /* stage('[parameters value in pipeline') {
             steps {
                 echo "pipeline parameters value"
                 echo "Name : ${params.Name}"
@@ -51,7 +51,7 @@ pipeline {
                 echo "RUN: ${params.Run}"
             }
         }
-       /* stage("build with maven") {
+       stage("build with maven") {
             steps {
                 script {
                     echo "maven build started"

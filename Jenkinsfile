@@ -51,7 +51,7 @@ pipeline {
                 echo "RUN: ${params.Run}"
             }
         }
-        stage("build with maven") {
+       /* stage("build with maven") {
             steps {
                 script {
                     echo "maven build started"
@@ -61,6 +61,16 @@ pipeline {
                 }
             }
             
+        }*/
+        stage("build with maven") {
+            steps {
+                script {
+                    echo "maven build started"
+                    sh 'pwd'
+                    sh 'mvn --version'
+                    sh 'mvn build'
+                }
+            }
         }
 
         stage("scanning stage") {

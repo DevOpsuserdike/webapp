@@ -19,8 +19,8 @@
   <distributionManagement>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>a0gblpjcpk2ii-artifactory-primary-0-snapshots</name>
-        <url>https://jfrogsiddk.jfrog.io/artifactory/test-libs-snapshot-local</url>
+        <name>a0lftxxa1wtyb-artifactory-primary-0-snapshots</name>
+        <url>https://trialkh74so.jfrog.io/artifactory/maven-libs-snapshot</url>
     </snapshotRepository>
   </distributionManagement>
 

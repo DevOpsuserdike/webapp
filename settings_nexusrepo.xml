@@ -19,7 +19,7 @@
   <mirror>
       <id>nexus</id>
       <mirrorOf>*</mirrorOf>
-      <url>http://localhost:8081/repository/nexus-proxy-repo/</url>
+      <url>http://52.12.21.97:8081/repository/maven-central/</url>
   </mirror>
 </mirrors>
 

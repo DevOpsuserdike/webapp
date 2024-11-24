@@ -57,7 +57,8 @@ pipeline {
                     echo "maven build started"
                     sh 'pwd'
                     sh 'mvn --version'
-#                    sh 'mvn install'
+                    sh 'mvn install'
+                    sh 'mvn clean deploy'
                 }
             }
             
@@ -68,7 +69,6 @@ pipeline {
                     echo "maven build started"
                     sh 'pwd'
                     sh 'mvn --version'
-#                    sh 'mvn clean deploy'
                 }
             }
         }
